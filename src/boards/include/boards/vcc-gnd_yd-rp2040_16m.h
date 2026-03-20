@@ -41,7 +41,7 @@ pico_board_cmake_set(PICO_PLATFORM, rp2040)
 #endif
 
 // User Button
-#define VCC_GND_YD_RP2040_16M_BUTTON0_PIN 24
+#define VCC_GND_YD_RP2040_BUTTON0_PIN 24
 
 
 // --- I2C ---
