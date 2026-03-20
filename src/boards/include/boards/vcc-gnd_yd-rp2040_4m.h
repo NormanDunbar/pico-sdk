@@ -9,15 +9,15 @@
 //       SHOULD ONLY CONSIST OF PREPROCESSOR DIRECTIVES
 // -----------------------------------------------------
 
-// This header may be included by other board headers as "boards/pico.h"
+// This header may be included by other board headers as "boards/vcc-gnd_yd-rp2040_4m.h"
 
-#ifndef _BOARDS_VCC-GND_YD-RP2040_4M_H
-#define _BOARDS_VCC-GND_YD-RP2040_4M_H
+#ifndef _BOARDS_VCC_GND_YD_RP2040_4M_H
+#define _BOARDS_VCC_GND_YD_RP2040_4M_H
 
 pico_board_cmake_set(PICO_PLATFORM, rp2040)
 
 // For board detection
-#define VCC-GND_YD-RP2040_4M
+#define VCC_GND_YD_RP2040_4M
 
 // --- UART ---
 #ifndef PICO_DEFAULT_UART
@@ -41,7 +41,7 @@ pico_board_cmake_set(PICO_PLATFORM, rp2040)
 #endif
 
 // User Button
-#define VCC-GND_YD-RP2040_4M_BUTTON0_PIN 24
+#define VCC_GND_YD_RP2040_4M_BUTTON0_PIN 24
 
 
 // --- I2C ---
@@ -80,15 +80,11 @@ pico_board_cmake_set(PICO_PLATFORM, rp2040)
 #define PICO_FLASH_SPI_CLKDIV 2
 #endif
 
-// These boards come in 2, 4, 8, 16 MB Flash.
+// These boards come in 4, 8, 16 MB Flash.
 pico_board_cmake_set_default(PICO_FLASH_SIZE_BYTES, (4 * 1024 * 1024))
 #ifndef PICO_FLASH_SIZE_BYTES
 #define PICO_FLASH_SIZE_BYTES (4 * 1024 * 1024)
 #endif
-
-// Drive high to force power supply into PWM mode (lower ripple on 3V3 at light loads)
-// Not used on this board as GPIO23 is the RGB LED pin.
-//#define PICO_SMPS_MODE_PIN 23
 
 #ifndef PICO_RP2040_B2_SUPPORTED
 #define PICO_RP2040_B2_SUPPORTED 1
