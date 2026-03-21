@@ -95,10 +95,5 @@ pico_board_cmake_set_default(PICO_FLASH_SIZE_BYTES, (8 * 1024 * 1024))
 #define PICO_VBUS_PIN 24
 #endif
 
-// The GPIO Pin used to monitor VSYS. Typically you would use this with ADC.
-// There is an example in adc/read_vsys in pico-examples.
-#ifndef PICO_VSYS_PIN
-#define PICO_VSYS_PIN 29
-#endif
 
 #endif
