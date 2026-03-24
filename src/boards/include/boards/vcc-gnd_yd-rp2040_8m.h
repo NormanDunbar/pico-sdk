@@ -36,6 +36,10 @@ pico_board_cmake_set(PICO_PLATFORM, rp2040)
 #endif
 
 // --- RGB (NeoPixel) LED ---
+// NOTE: Some YD-RP2040 boards have a link above the RGB
+// marked "RGB" or "R56" or "R58" or similar. On those you
+// have to solder a tiny wire across the link, carefully,
+// to enable the RGB LED.
 #ifndef PICO_DEFAULT_WS2812_PIN
 #define PICO_DEFAULT_WS2812_PIN 23
 #endif
@@ -88,11 +92,6 @@ pico_board_cmake_set_default(PICO_FLASH_SIZE_BYTES, (8 * 1024 * 1024))
 
 #ifndef PICO_RP2040_B2_SUPPORTED
 #define PICO_RP2040_B2_SUPPORTED 1
-#endif
-
-// The GPIO Pin used to read VBUS to determine if the device is battery powered.
-#ifndef PICO_VBUS_PIN
-#define PICO_VBUS_PIN 24
 #endif
 
 
